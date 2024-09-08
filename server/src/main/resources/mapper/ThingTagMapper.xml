@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gk.study.mapper.ThingTagMapper">
+
+
+    <select id="qryThingTagByThingId" resultType="com.gk.study.entity.ThingTagVo">
+        select a.*,c.title as tagName from b_thing_tag a left join b_thing b on a.thing_id = b.id left join b_tag c on a.tag_id = c.id where a.thing_id = #{id};
+    </select>
+
+
+</mapper>
